@@ -1,0 +1,69 @@
+Publish to github repo:
+
+1. git init
+2. git remote add origin <remote-url>
+3. git add .
+4. git commit -m "Initial commit"
+5. git push -u origin master
+
+Branch Overview
+    This document provides an overview of the branches in the project repository and their purposes.
+    
+	 master Branch
+        Purpose: Holds stable and production-ready code.
+        Creation: Typically created by default when initializing a repository.
+        Usage: Deployable codebase. Merge feature branches and release branches into main after thorough testing and validation.
+
+    develop Branch
+        Purpose: Integration branch for ongoing development.
+        Creation: Often created after initializing the repository.
+        Usage: Continuous integration of feature branches. Merge feature branches into develop for integration testing.
+
+    feature/api-enhancement Branch
+        Purpose: Development branch for enhancements related to the API.
+        Creation: Created from the develop branch.
+        Usage: Work on API enhancements independently. Merge into develop for integration testing once changes are complete and tested.
+
+    feature/client-enhancement Branch
+        Purpose: Development branch for enhancements related to the client.
+        Creation: Created from the development branch.
+        Usage: Work on client-side enhancements independently. Merge into develop for integration testing once changes are complete and tested.
+
+    release/1.0.0 Branch
+        Purpose: Preparation for a new release, including final testing and bug fixes.
+        Creation: Created from the development branch when ready to prepare a new release.
+        Usage: Finalize the release with thorough testing. Merge into both main and development branches once validated.
+
+    hotfix Branch
+        Purpose: Urgent fixes for production issues.
+        Creation: Created from the main branch.
+        Usage: Fix critical issues in the production environment. Merge fixes into both main and development branches once validated.
+
+Branch Workflow Example
+
+    Start a New Feature
+        git checkout -b feature/new-feature develop
+        # Work on the new feature, commit changes
+
+    Merge Feature into Development
+        git checkout development
+        git merge feature/new-feature
+        # Resolve any merge conflicts, if any
+
+    Prepare for Release
+        git checkout -b release/1.1.0 development
+        # Finalize the release, perform testing
+
+    Merge Release into Main and Development
+        git checkout main
+        git merge release/1.1.0
+        git tag -a 1.1.0 -m "Version 1.1.0"
+        git push origin main --tags
+        git checkout development
+        git merge release/1.1.0
+
+    Create Documentation Branch
+        git checkout -b documentation
+        # Create and add documentation files
+
+In this workflow, you're continuously integrating changes from feature branches into the development branch for testing. Once validated, you prepare releases from the develop branch, merge them into both main and develop, and maintain documentation separately in its own branch.
