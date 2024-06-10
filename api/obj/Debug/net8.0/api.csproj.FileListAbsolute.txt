@@ -255,3 +255,4 @@ C:\Personal_Projects\I_am_Online_System\api\bin\Debug\net8.0\Microsoft.AspNetCor
 C:\Personal_Projects\I_am_Online_System\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Personal_Projects\I_am_Online_System\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Personal_Projects\I_am_Online_System\api\bin\Debug\net8.0\dotenv.net.dll
+C:\Personal_Projects\I_Am_Online_System\api\obj\Debug\net8.0\api.sourcelink.json
